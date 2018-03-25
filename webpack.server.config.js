@@ -93,8 +93,6 @@ module.exports = ({ production, server, extractCss, coverage, ssr } = {}) => ({
             { test: /\.html$/i, loader: 'html-loader' },
             { test: /\.ts$/i, loader: 'ts-loader', exclude: nodeModulesDir },
             { test: /\.json$/i, loader: 'json-loader' },
-            // exposes jQuery globally as $ and as jQuery:
-            { test: require.resolve('jquery'), loader: 'expose-loader?$!expose-loader?jQuery' },
             // embed small images and fonts as Data Urls and larger ones as files:
             { test: /\.(png|gif|jpg|cur)$/i, loader: 'url-loader', options: { limit: 8192 } },
             { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff2' } },
@@ -115,9 +113,6 @@ module.exports = ({ production, server, extractCss, coverage, ssr } = {}) => ({
             }
         }),
         new ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery',
-            'window.jQuery': 'jquery',
             'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!isomorphic-fetch'
         }),
         new CopyWebpackPlugin([

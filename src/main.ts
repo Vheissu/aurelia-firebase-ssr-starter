@@ -5,7 +5,7 @@ import environment from './environment';
 import { PLATFORM } from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
 
-import { State as clientInitialState } from './store/state';
+import { initialState as clientInitialState } from './store/state';
 
 let initialState = clientInitialState;
 

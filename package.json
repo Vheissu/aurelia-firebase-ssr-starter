@@ -116,8 +116,12 @@
     "node": ">= 6.0.0"
   },
   "scripts": {
+    "test": "nps test",
     "start": "nps",
-    "test": "nps test"
+    "watch": "nps webpack.server.ssr.watch",
+    "server": "nps webpack.server.ssr.start",
+    "build": "nps webpack.build",
+    "build:ssr": "nps webpack.build.production.ssr"
   },
   "main": "dist/app.bundle.js"
 }

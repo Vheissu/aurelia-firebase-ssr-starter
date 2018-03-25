@@ -23,7 +23,7 @@ const cssRules = [
   { loader: 'css-loader' },
 ];
 
-module.exports = ({production, server, extractCss, coverage, analyze} = {}) => ({
+module.exports = ({production, server, extractCss, coverage, analyze, ssr} = {}) => ({
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [srcDir, 'node_modules'],
@@ -103,11 +103,12 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       'aurelia-testing': [ './compile-spy', './view-spy' ]
     }),
     new HtmlWebpackPlugin({
-      template: 'index.ejs',
-      metadata: {
-        // available in index.ejs //
-        title, server, baseUrl
-      }
+        filename: ssr ? 'index.ssr.html' : 'index.html',
+        template: ssr ? 'index.ssr.ejs' : 'index.ejs',
+        minify: undefined,
+        metadata: {
+            title, server, baseUrl
+        },
     }),
     ...when(extractCss, new ExtractTextPlugin({
       filename: production ? '[contenthash].css' : '[id].css',

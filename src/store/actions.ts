@@ -2,7 +2,7 @@ import store from './store';
 
 import { UPDATE_USER } from './constants';
 
-function updateUser(state, user) {
+export function updateUser(state, user) {
     return { ...state, ...{ user } };
 }
 

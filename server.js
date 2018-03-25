@@ -1,9 +1,13 @@
 const Koa = require('koa');
 const path = require('path');
-const {aureliaKoaMiddleware} = require('aurelia-middleware-koa');
-const initialState = require('./src/store/state');
 
-var port = process.env.PORT || 8080;
+const { aureliaKoaMiddleware } = require('aurelia-middleware-koa');
+
+const initialState = {
+    user: null
+};
+
+const port = process.env.PORT || 8080;
 
 const app = new Koa();
 const bundle = './dist/server.bundle';

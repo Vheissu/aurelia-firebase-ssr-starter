@@ -1,5 +1,7 @@
-import { autoinject, PLATFORM } from 'aurelia-framework';
+import { autoinject, PLATFORM, computedFrom } from 'aurelia-framework';
 import { RouterConfiguration, Router } from 'aurelia-router';
+
+import { AuthorizeStep } from './authorize-step';
 
 import { Store } from 'aurelia-store';
 
@@ -29,7 +31,8 @@ export class App {
         config.options.root = '/';
 
         config.map([
-            { name: 'home', route: [''], moduleId: PLATFORM.moduleName('./routes/home'), title: 'Home' }
+            { name: 'home', route: [''], moduleId: PLATFORM.moduleName('./routes/home'), title: 'Home' },
+            { name: 'logged-in', route: 'logged-in', moduleId: PLATFORM.moduleName('./routes/logged-in'), title: 'Logged In', nav: false, auth: true }
         ]);
 
         config.mapUnknownRoutes(PLATFORM.moduleName('./routes/not-found'));

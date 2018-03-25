@@ -37,6 +37,8 @@ export class App {
 
         config.mapUnknownRoutes(PLATFORM.moduleName('./routes/not-found'));
 
+        config.addPipelineStep('authorize', AuthorizeStep);
+
         this.router = router;
     }
 }

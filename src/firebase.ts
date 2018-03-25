@@ -4,12 +4,12 @@ import 'firebase/firestore';
 
 // Pass in your own configuration options
 const config = {
-    apiKey: "AIzaSyDO0qFKD3epgUWyzcySSbwk-lRFZ38m92w",
-    authDomain: "built-with-aurelia-6ef02.firebaseapp.com",
-    databaseURL: "https://built-with-aurelia-6ef02.firebaseio.com",
-    projectId: "built-with-aurelia-6ef02",
-    storageBucket: "built-with-aurelia-6ef02.appspot.com",
-    messagingSenderId: "380305050522"
+    apiKey: "AIzaSyB1NqbyyeD9UciqrEVXdWGFvWvvoyvqR5M",
+    authDomain: "mocks-xyz.firebaseapp.com",
+    databaseURL: "https://mocks-xyz.firebaseio.com",
+    projectId: "mocks-xyz",
+    storageBucket: "mocks-xyz.appspot.com",
+    messagingSenderId: "823822156231"
 };
 
 if (!firebase.apps.length) {

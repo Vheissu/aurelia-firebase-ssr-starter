@@ -8,7 +8,6 @@ import { State } from '../store/state';
 export class LoginIn {
     private currentUser = {};
     private state: State;
-    private store: Store<State>;
 
     constructor(private store: Store<State>) {
         this.store.state.subscribe((state: State) => {

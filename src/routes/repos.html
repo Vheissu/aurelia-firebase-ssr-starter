@@ -1,0 +1,11 @@
+<template>
+    <h1>Aurelia Repositories</h1>
+    <p>A list of cool Aurelia repositories.</p>
+
+    <ul>
+        <li repeat.for="repo of repos">
+            <p>${repo.name}</p>
+            <p><a href="${repo.repoUrl}">View repository</a></p>
+        </li>
+    </ul>
+</template>

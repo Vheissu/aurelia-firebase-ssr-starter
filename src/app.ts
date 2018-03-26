@@ -32,7 +32,8 @@ export class App {
 
         config.map([
             { name: 'home', route: [''], moduleId: PLATFORM.moduleName('./routes/home'), title: 'Home' },
-            { name: 'logged-in', route: 'logged-in', moduleId: PLATFORM.moduleName('./routes/logged-in'), title: 'Logged In', nav: false, auth: true }
+            { name: 'logged-in', route: 'logged-in', moduleId: PLATFORM.moduleName('./routes/logged-in'), title: 'Logged In', nav: false, auth: true },
+            { name: 'repos', route: 'repos', moduleId: PLATFORM.moduleName('./routes/repos'), title: 'Aurelia Repos' }
         ]);
 
         config.mapUnknownRoutes(PLATFORM.moduleName('./routes/not-found'));

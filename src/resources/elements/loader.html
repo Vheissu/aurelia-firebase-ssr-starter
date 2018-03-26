@@ -1,0 +1,29 @@
+<template bindable="loading" class="${loading ? 'loading' : ''}">
+    <style type="text/css">
+        loader {
+            background: rgba(255, 255, 255, 0.6);
+            display: none;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        loader.loading {
+            display: block;
+            z-index: 999;
+        }
+
+        .loader-inner {
+            left: 50%;
+            position: fixed;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <div class="loader-inner">
+        <h1>Loading...</h1>
+    </div>
+</template>

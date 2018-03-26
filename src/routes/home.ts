@@ -19,7 +19,7 @@ export class Home {
         return new Promise((resolve, reject) => {
             firebase.auth().onAuthStateChanged(user => {
                 if (user) {
-                    return new Redirect('logged-in');
+                    resolve(new Redirect('logged-in'));
                 } else {
                     resolve();
                 }

@@ -1,4 +1,5 @@
 import { autoinject } from 'aurelia-framework';
+import { Redirect, Router } from 'aurelia-router';
 
 import firebase from '../firebase';
 import { Store } from 'aurelia-store';
@@ -9,7 +10,7 @@ export class LoginIn {
     private currentUser = {};
     private state: State;
 
-    constructor(private store: Store<State>) {
+    constructor(private store: Store<State>, private router: Router) {
         this.store.state.subscribe((state: State) => {
             this.state = state;
 
@@ -18,6 +19,8 @@ export class LoginIn {
     }
 
     logout() {
-        return firebase.auth().signOut();
+        firebase.auth().signOut().then(() => {
+            this.router.navigate('/');
+        });
     }
 }
